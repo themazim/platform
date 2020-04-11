@@ -140,7 +140,7 @@ class VersionManager
 
         $writeResults = $this->addParentResults($writeResults, $parents);
 
-        $this->writeAuditLog($writeResults, $writeContext);
+        //$this->writeAuditLog($writeResults, $writeContext);
 
         return $writeResults;
     }
@@ -154,7 +154,7 @@ class VersionManager
 
         $writeResults = $this->addParentResults($writeResults, $parents);
 
-        $this->writeAuditLog($writeResults, $writeContext);
+        //$this->writeAuditLog($writeResults, $writeContext);
 
         return $writeResults;
     }
@@ -167,7 +167,7 @@ class VersionManager
 
         $writeResults = $this->addParentResults($writeResults, $parents);
 
-        $this->writeAuditLog($writeResults, $writeContext);
+        //$this->writeAuditLog($writeResults, $writeContext);
 
         return $writeResults;
     }
@@ -182,7 +182,7 @@ class VersionManager
 
         $deleted = $this->addParentResults($deleted, $parents);
 
-        $this->writeAuditLog($deleted, $writeContext);
+        //$this->writeAuditLog($deleted, $writeContext);
 
         if (!$parents) {
             return $deleteEvent;
@@ -224,7 +224,7 @@ class VersionManager
         $event = EntityWrittenContainerEvent::createWithWrittenEvents($affected, $versionContext->getContext(), []);
         $this->eventDispatcher->dispatch($event);
 
-        $this->writeAuditLog($affected, $context, $versionId, true);
+        //$this->writeAuditLog($affected, $context, $versionId, true);
 
         return $versionId;
     }
@@ -397,7 +397,7 @@ class VersionManager
         });
 
         if ($writeAuditLog) {
-            $this->writeAuditLog($result, $versionContext);
+            //$this->writeAuditLog($result, $versionContext);
         }
 
         return $result;
